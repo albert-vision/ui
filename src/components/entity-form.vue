@@ -43,6 +43,9 @@ export default {
     properties() {
       return this.$store.getters.newEntity.properties
     },
+    newEntity() {
+      return this.$store.getters.newEntity
+    },
   },
   methods: {
     addProperty() {
@@ -52,7 +55,7 @@ export default {
     removeProperty() {
     },
     createEntity() {
-      this.$store.dispatch(CREATE_ENTITY, this.)
+      this.$store.dispatch(CREATE_ENTITY, this.newEntity)
     }
   }
 }

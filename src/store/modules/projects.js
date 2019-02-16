@@ -50,6 +50,7 @@ const mutations = {
     state.newEntity.properties.push(payload)
   },
   CREATE_ENTITY: (state, payload) => {
+    console.log(payload)
     state.newEntity = payload
     state.newProject.entities.push(payload)
   }
