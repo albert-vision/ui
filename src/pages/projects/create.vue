@@ -1,18 +1,19 @@
 <template>
-  <div id="wrapper" >
+  <div id="wrapper">
     <section class="container">
       <h1>Create Project</h1>
-      <div>
-          <form action="">
-              
-          </form>
-      </div>
+      <project-form></project-form>
     </section>
   </div>
 </template>
 
 <script>
+import projectForm from '@/components/project-form'
+
 export default {
+  components: {
+      projectForm
+  },
 }
 </script>
 
