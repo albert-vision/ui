@@ -21,21 +21,19 @@
         <button @click.prevent="removeProperty()">Remove</button>
       </div>
       <br>
-      <button>Save Entity</button>
+      <button @click.prevent="createEntity()">Save Entity</button>
     </form>
   </div>
 </template>
 
 
 <script>
-import { CREATE_PROPERTY } from '@/store/modules/projects'
+import { CREATE_PROPERTY, CREATE_ENTITY } from '@/store/modules/projects'
 
 export default {
   data() {
     return {
-      newProperty: {
-
-      }
+      newProperty: {},
     }
   },
   computed: {
@@ -54,7 +52,7 @@ export default {
     removeProperty() {
     },
     createEntity() {
-      this.$store.dispatch(CREATE_ENTITY)
+      this.$store.dispatch(CREATE_ENTITY, this.)
     }
   }
 }

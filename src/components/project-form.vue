@@ -15,7 +15,6 @@ import entityForm from '@/components/entity-form'
 export default {
   data() {
     return {
-      step: 1
     }
   },
   components: {
@@ -25,6 +24,9 @@ export default {
     entities() {
       return this.$store.getters.newProject.entities
     },
+    step() {
+      return this.$store.getters.newProject.step || 2
+    }
   }
 }
 </script>
