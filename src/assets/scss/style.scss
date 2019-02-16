@@ -1,0 +1,70 @@
+// Vars
+
+$profile-photo-size: 100px; // width = height
+
+// ----------------------------------------
+// // ------ colors ------
+// ----------------------------------------
+
+$primary: #0088cc;      // blue
+$secondary: #005580;    // dark-blue
+$black: #272727;        // dark-grey
+$gray: #808080;
+$light-gray: #e5e5e5;
+$muted: #808080;
+$white: #ffffff;
+
+// ----------------------------------------
+// // ----additional color settings ----
+// ----------------------------------------
+
+$body-bg: #ffffff;
+$header-bg: rgba(255,255,255,0.7);
+
+// ----------------------------------------
+// // ------ Typography Settings ------ dsa
+// ----------------------------------------
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+$hover-color: #ccc;
+$nav-color: #000;
+$nav-hover-color: #ccc;
+$secondarynav-color: $primary-color;
+$logo-color: #000;
+
+// ----------------------------------------
+// // ------ import config ------
+// ----------------------------------------
+
+@import "lib/config";
+
+// ----------------------------------------
+// ------ import custom mixins ------
+// ----------------------------------------
+
+@import "lib/mixins";
+
+// ----------------------------------------
+// // --- import some stuff ---
+// ----------------------------------------
+@import "lib/reset";
+
+@import "lib/main";
+@import "lib/main-break";
+
+
+@import "lib/forms";
+@import "lib/buttons";
+@import "lib/header";
+@import "lib/profile";
+@import "lib/gallery";
+@import "lib/cards";
+@import "lib/footer";
+
+@import "lib/animations";
+
+
+// ----------------------------------------
+// // ------ import _shame ------
+// ----------------------------------------

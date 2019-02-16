@@ -1,0 +1,33 @@
+@include breakpoint(phablet) {
+
+    .featured {
+        padding: 80px 10px 10px 10px;
+    }
+    
+    #menu {
+        display: flex !important;
+    }
+    
+    .menu-toggle {
+        display: none;
+    }
+}
+
+@include breakpoint(laptop) {
+    body {}
+
+    a:hover {
+        color: $hover-color;
+    }
+
+    .container-x {
+        padding-right: 10px;
+
+    }
+
+    .container {
+        max-width: 58em;
+        margin: auto;
+        padding-right: 0;
+    }
+}
