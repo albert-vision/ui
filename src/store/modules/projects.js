@@ -1,4 +1,5 @@
 export const CREATE_PROJECT = 'CREATE_PROJECT'
+export const CHANGE_STEP = 'CHANGE_STEP'
 export const CREATE_ENTITY = 'CREATE_ENTITY'
 export const CREATE_PROPERTY = 'CREATE_PROPERTY'
 
@@ -6,16 +7,8 @@ const state = () => ({
   newProject: {
     title: '',
     entities: [],
-    events: []
-  },
-  newEntity: {
-    name: '',
-    properties: []
-  },
-  newProperty: {
-    type: '',
-    name: '',
-    multiple: false
+    events: [],
+    step: 2
   },
   baseTypes: [
     {label: 'Integer', keyword: 'int'},
@@ -27,32 +20,31 @@ const getters = {
   newProject: state => {
     return state.newProject
   },
-  newEntity: state => {
-    return state.newEntity
-  },
+
   baseTypes: state => {
     return state.baseTypes
   }
 }
 
 const actions = {
-  CREATE_PROPERTY: ({commit}, property) => {
-    commit(CREATE_PROPERTY, property)
-  },
   CREATE_ENTITY: ({commit}, entity) => {
     commit(CREATE_ENTITY, entity)
+  },
+
+  CHANGE_STEP: ({commit}, step) => {
+    commit(CHANGE_STEP, step)
   }
 }
 
 const mutations = {
-  CREATE_PROPERTY: (state, payload) => {
-    state.newProperty = payload
-    state.newEntity.properties.push(payload)
-  },
+ 
   CREATE_ENTITY: (state, payload) => {
     console.log(payload)
     state.newEntity = payload
     state.newProject.entities.push(payload)
+  },
+  CHANGE_STEP: (state, payload) => {
+    state.newProject.step = payload
   }
 
 }

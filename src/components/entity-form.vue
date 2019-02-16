@@ -2,7 +2,7 @@
   <div>
     <h3>Create Entity</h3>
     <form action>
-      <input type="text" placeholder="Entity name">
+      <input type="text" placeholder="Entity name" v-model="newEntity.name">
       <p>Properties</p>
       <div>
         <select v-model="newProperty.type">
@@ -13,7 +13,7 @@
         <input type="text" v-model="newProperty.name" placeholder="Property name">
         <button @click.prevent="addProperty()">Add Property</button>
       </div>
-      <div v-for="property in properties" :key="property.name">
+      <div v-for="property in newEntity.properties" :key="property.name">
         <select disabled>
           <option v-for="type in baseTypes" :key="type.label">{{ type.label }}</option>
         </select>
@@ -28,34 +28,38 @@
 
 
 <script>
-import { CREATE_PROPERTY, CREATE_ENTITY } from '@/store/modules/projects'
+import { CREATE_PROPERTY, CREATE_ENTITY, CHANGE_STEP } from '@/store/modules/projects'
 
 export default {
   data() {
     return {
-      newProperty: {},
+      newProperty: {
+
+      },
+      newEntity: {
+        name: '',
+        properties: [],
+
+      }
     }
   },
   computed: {
     baseTypes() {
       return this.$store.getters.baseTypes
     },
-    properties() {
-      return this.$store.getters.newEntity.properties
-    },
-    newEntity() {
-      return this.$store.getters.newEntity
-    },
+
   },
   methods: {
     addProperty() {
-      this.$store.dispatch(CREATE_PROPERTY, this.$data.newProperty)
+      this.$data.newEntity.properties.push(this.$data.newProperty)
       this.$data.newProperty = {}
     },
     removeProperty() {
     },
     createEntity() {
       this.$store.dispatch(CREATE_ENTITY, this.newEntity)
+      this.$store.dispatch(CHANGE_STEP, 3)
+
     }
   }
 }
