@@ -7,13 +7,11 @@
     <!-- Step 2 - Entities -->
     <div v-if="step == 2">
       <h3>Entities</h3>
-      <ul>
-        <li v-for="entity in entities" :key="entity.name">
-          <span>{{ entity.name }}</span>
-          <button @click.prevent>Edit</button>
-          <button @click.prevent>Remove</button>
-        </li>
-      </ul>
+      <div class="row">
+        <div class="col-3" v-for="entity in entities">
+          <entity-single :entity="entity"></entity-single>
+        </div>
+      </div>
       <div>
         <button @click="showEntityForm = true">New Entity</button>
         <entity-form v-if="showEntityForm"></entity-form>
@@ -23,7 +21,7 @@
 
     <!-- Step 3 - Events -->
     <div v-if="step == 3">
-      <h3>Events</h3>
+      <h3 class="page-header"></h3>
       <ul>
         <li v-for="entity in entities" :key="entity.name">
           <span>{{ entity.name }}</span>
@@ -45,7 +43,9 @@
 <script>
 import entityForm from '@/components/entity-form'
 import eventForm from '@/components/event-form'
+
 import { CHANGE_STEP } from '@/store/modules/projects'
+import EntitySingle from "./entity-single";
 
 export default {
   data() {
@@ -54,6 +54,7 @@ export default {
     }
   },
   components: {
+      EntitySingle,
     entityForm,
     eventForm
   },

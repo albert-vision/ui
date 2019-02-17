@@ -70,7 +70,7 @@
             createEntity() {
                 this.$store.dispatch(CREATE_ENTITY, this.newEntity)
                 // this.$store.dispatch(CHANGE_STEP, 3)
-                this.$router.push({name: 'entities.list'})
+                // this.$router.push({name: 'entities.list'})
 
             }
         }
