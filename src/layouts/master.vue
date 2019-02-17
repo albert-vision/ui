@@ -2,6 +2,11 @@
   <div>
     <navigation></navigation>
     <router-view/>
+    <footer id="footer-main">
+      <p class="container text-muted">
+        &copy; Albert Vision. All rights reserved.
+      </p>
+    </footer>
   </div>
 </template>
 
@@ -19,6 +24,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import "@/assets/scss/style.scss";
+@import "@/assets/scss/main.scss";
 </style>
 
