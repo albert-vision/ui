@@ -27,4 +27,5 @@ export default {
   login,
   register,
   logout,
-getOrganizers}
+  getOrganizers
+}

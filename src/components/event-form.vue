@@ -9,7 +9,7 @@
       <input type="checkbox" :value="entity" v-model="selectedParticipants" />{{ entity.name }}
       </div>
       <br>
-      <button @click.prevent="createEvent()">Save Event</button>
+      <button class="btn btn-primary" @click.prevent="createEvent()">Save Event</button>
     </form>
   </div>
 </template>
@@ -34,6 +34,8 @@ export default {
   },
   methods: {
     createEvent() {
+      this.$data.newEvent.participants = this.$data.newEvent.selectedParticipants
+      console.log(this.$data.newEvent.participants )
       this.$store.dispatch(CREATE_EVENT, this.$data.newEvent)
       this.$data.newEvent = {
         name: '',
