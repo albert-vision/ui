@@ -13,6 +13,7 @@ import login from '@/pages/auth/login'
 import home from '@/pages/home'
 
 import createProject from '@/pages/projects/create'
+import listEntities from '@/pages/entities/list'
 
 Vue.use(Router)
 
@@ -24,6 +25,7 @@ export default new Router({
     { path: '/register', name: 'register', component: register, beforeEnter: guest},
     { path: '/login', name: 'login', component: login, beforeEnter: guest},
 
-    { path: '/projects/create', name: 'projects.create', component: createProject },
+    { path: '/entities', name: 'entities.list', component: listEntities },
+    { path: '/entities/create', name: 'entities.create', component: createProject },
   ]
 })

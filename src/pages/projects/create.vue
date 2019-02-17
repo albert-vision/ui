@@ -1,7 +1,6 @@
 <template>
   <div id="wrapper">
     <section class="container">
-      <h1>Create Project</h1>
       <project-form></project-form>
     </section>
   </div>

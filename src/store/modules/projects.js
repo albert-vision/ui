@@ -38,7 +38,7 @@ const actions = {
 
   CHANGE_STEP: ({commit}, step) => {
     commit(CHANGE_STEP, step)
-  }
+  },
 }
 
 const mutations = {

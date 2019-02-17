@@ -9,7 +9,7 @@
     <nav class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav my-lg-0-right">
         <li class="nav-item">
-          <router-link :to="{ name: 'projects.create' }" class="nav-link">Create Project</router-link>
+          <router-link :to="{ name: 'entities.create' }" class="nav-link">Create Entity</router-link>
         </li>
       </ul>
     </nav>
