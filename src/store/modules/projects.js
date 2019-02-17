@@ -1,6 +1,7 @@
 export const CREATE_PROJECT = 'CREATE_PROJECT'
 export const CHANGE_STEP = 'CHANGE_STEP'
 export const CREATE_ENTITY = 'CREATE_ENTITY'
+export const CREATE_EVENT = 'CREATE_EVENT'
 export const CREATE_PROPERTY = 'CREATE_PROPERTY'
 
 const state = () => ({
@@ -8,7 +9,7 @@ const state = () => ({
     title: '',
     entities: [],
     events: [],
-    step: 2
+    step: 1
   },
   baseTypes: [
     {label: 'Integer', keyword: 'int'},
@@ -31,6 +32,10 @@ const actions = {
     commit(CREATE_ENTITY, entity)
   },
 
+  CREATE_EVENT: ({commit}, event) => {
+    commit(CREATE_EVENT, event)
+  },
+
   CHANGE_STEP: ({commit}, step) => {
     commit(CHANGE_STEP, step)
   }
@@ -42,6 +47,11 @@ const mutations = {
     console.log(payload)
     state.newEntity = payload
     state.newProject.entities.push(payload)
+  },
+  CREATE_EVENT: (state, payload) => {
+    console.log(payload)
+    state.newEvent = payload
+    state.newProject.events.push(payload)
   },
   CHANGE_STEP: (state, payload) => {
     state.newProject.step = payload

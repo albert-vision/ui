@@ -6,7 +6,7 @@
       <p>Properties</p>
       <div>
         <select v-model="newProperty.type">
-          <option selected>Select type</option>
+          <option :selected="true">Select type</option>
           <option v-for="type in baseTypes" :key="type.label" :value="type">{{ type.label }}</option>
         </select>
         <input type="checkbox" v-model="newProperty.multiple">Multiple
@@ -57,8 +57,12 @@ export default {
     removeProperty() {
     },
     createEntity() {
-      this.$store.dispatch(CREATE_ENTITY, this.newEntity)
-      this.$store.dispatch(CHANGE_STEP, 3)
+      this.$store.dispatch(CREATE_ENTITY, this.$data.newEntity)
+      this.$data.newEntity = {
+        name: '',
+        properties: [],
+
+      }
 
     }
   }
